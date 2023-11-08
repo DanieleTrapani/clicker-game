@@ -3,9 +3,18 @@
   import spaceImg from "./assets/space.jpeg";
   import Upgrade from "./lib/Upgrade.svelte";
   let points = 0;
+  let scale = false;
 
   const addPoints = () => {
+    animate();
     points += 100;
+  };
+
+  const animate = () => {
+    scale = true;
+    setTimeout(() => {
+      scale = false;
+    }, 50);
   };
 </script>
 
@@ -17,12 +26,16 @@
   <img
     src={earthImg}
     alt="earth"
-    class="w-56 m-auto mt-10 hover:scale-110"
+    class="w-56 m-auto mt-10"
+    class:scale
     on:click={addPoints}
   />
   <div
-    class=" flex flex-col gap-4 w-full h-screen bg-gray-900 text-white px-5 py-4 mt-12"
+    class="upgrade-list flex flex-col gap-4 w-full h-screen bg-gray-900 text-white px-5 py-4 mt-12"
   >
+    <Upgrade />
+    <Upgrade />
+    <Upgrade />
     <Upgrade />
     <Upgrade />
   </div>
@@ -31,5 +44,9 @@
 <style>
   main {
     font-family: "Chakra Petch", sans-serif;
+  }
+
+  .scale {
+    transform: scale(1.1);
   }
 </style>
