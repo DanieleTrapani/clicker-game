@@ -1,6 +1,7 @@
 <script lang="ts">
   export let name: string;
-  let level = parseInt(localStorage.getItem(name)!) || 1;
+  export let level: number;
+  import state from "../App.svelte";
 
   let buttonScale = false;
   const animate = () => {
