@@ -1,6 +1,5 @@
 <script lang="ts">
   import earthImg from "./assets/earth.png";
-  import spaceImg from "./assets/space.jpeg";
   import Upgrade from "./lib/Upgrade.svelte";
   import { writable } from "svelte/store";
 
@@ -25,6 +24,11 @@
       scale = false;
     }, 50);
   };
+
+  setInterval(() => {
+    $state.points += pointsPerSec;
+    localStorage.setItem("points", $state.points.toString());
+  }, 1000);
 </script>
 
 <main class="flex flex-col">

@@ -1,7 +1,8 @@
 <script lang="ts">
   export let name: string;
   export let level: number;
-  import state from "../App.svelte";
+
+  $: cost = level * 100;
 
   let buttonScale = false;
   const animate = () => {
@@ -31,7 +32,7 @@
     on:click={levelUp}
   >
     <p>Buy</p>
-    <p>200pts</p>
+    <p>{cost}pts</p>
   </div>
 </div>
 
