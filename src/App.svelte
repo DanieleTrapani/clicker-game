@@ -3,11 +3,10 @@
   import spaceImg from "./assets/space.jpeg";
   import Upgrade from "./lib/Upgrade.svelte";
 
-  let points: number = parseInt(localStorage.getItem("points")) || 0;
+  let points: number = parseInt(localStorage.getItem("points")!) || 0;
 
   const addPoints = () => {
-    animate();
-    points += 100;
+    points += 1;
     localStorage.setItem("points", points.toString());
   };
 
@@ -31,15 +30,13 @@
     class="w-56 m-auto mt-10"
     class:scale
     on:click={addPoints}
+    on:click={animate}
   />
   <div
     class="upgrade-list flex flex-col gap-4 w-full h-screen bg-gray-900 text-white px-5 py-4 mt-12"
   >
-    <Upgrade />
-    <Upgrade />
-    <Upgrade />
-    <Upgrade />
-    <Upgrade />
+    <Upgrade name={"Autoclicker"} />
+    <Upgrade name={"Points per click"} />
   </div>
 </main>
 
