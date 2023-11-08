@@ -1,8 +1,9 @@
 <script lang="ts">
   export let name: string;
   export let level: number;
+  import { state } from "./store";
 
-  $: cost = level * 100;
+  $: cost = level * 100 + 100;
 
   let buttonScale = false;
   const animate = () => {
@@ -15,6 +16,7 @@
   const levelUp = () => {
     level++;
     localStorage.setItem(name, level.toString());
+    $state.points -= cost;
   };
 </script>
 
