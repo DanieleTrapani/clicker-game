@@ -26,16 +26,16 @@
 </script>
 
 <main class="flex flex-col">
-  <h4 class="text-white text-center text-xl mt-4">
+  <h4 class="text-white text-center text-2xl mt-4">
     Score: {$state.points} pts
   </h4>
-  <h6 class="text-white text-center text-xs">{pointsPerSec} pts/s</h6>
+  <h6 class="text-white text-center text-base">{pointsPerSec} pts/s</h6>
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
   <img
     src={earthImg}
     alt="earth"
-    class="w-56 m-auto mt-10"
+    class="w-80 m-auto mt-10"
     class:scale
     on:click={addPoints}
     on:click={animate}

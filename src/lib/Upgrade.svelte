@@ -14,6 +14,9 @@
   };
 
   const levelUp = () => {
+    if ($state.points < cost) {
+      return;
+    }
     level++;
     localStorage.setItem(name, level.toString());
     $state.points -= cost;
