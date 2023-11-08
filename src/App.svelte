@@ -2,14 +2,16 @@
   import earthImg from "./assets/earth.png";
   import spaceImg from "./assets/space.jpeg";
   import Upgrade from "./lib/Upgrade.svelte";
-  let points = 0;
-  let scale = false;
+
+  let points: number = parseInt(localStorage.getItem("points")) || 0;
 
   const addPoints = () => {
     animate();
     points += 100;
+    localStorage.setItem("points", points.toString());
   };
 
+  let scale = false;
   const animate = () => {
     scale = true;
     setTimeout(() => {
