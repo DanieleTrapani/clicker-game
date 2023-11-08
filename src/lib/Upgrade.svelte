@@ -26,7 +26,7 @@
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <!-- svelte-ignore a11y-no-static-element-interactions -->
   <div
-    class="flex flex-col justify-center items-center bg-[#FFD700] px-3 rounded-xl text-[#0E141D]"
+    class="flex flex-col justify-center items-center bg-[#FFD700] px-3 rounded-xl text-[#0E141D] min-w-[5rem]"
     class:buttonScale
     on:click={animate}
     on:click={levelUp}
