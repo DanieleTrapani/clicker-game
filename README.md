@@ -1,6 +1,7 @@
 # Earth Clicker Game
 
 The Earth Clicker Game is a simple web-based clicker game. It's built using Svelte and styled with Tailwind CSS. The game stores your progress locally using Local Storage, allowing you to continue your game across different sessions.
+Portfolio Link for more info: [Link](https://troopl.com/danieletrapani/earth-clicker)
 
 ## How to Play
 
