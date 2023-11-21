@@ -5,15 +5,15 @@
 
   $: cost = level * 100 + 100;
 
-  let buttonScale = false;
-  const animate = () => {
+  let buttonScale: boolean = false;
+  const animate = (): void => {
     buttonScale = true;
     setTimeout(() => {
       buttonScale = false;
     }, 50);
   };
 
-  const levelUp = () => {
+  const levelUp = (): void => {
     if ($state.points < cost) {
       return;
     }

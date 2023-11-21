@@ -6,13 +6,13 @@
   $: pointsPerSec = $state.autoclickerLevel * 1;
   $: pointsPerTap = $state.tapLevel * 1 + 1;
 
-  const addPoints = () => {
+  const addPoints = (): void => {
     $state.points += pointsPerTap;
     localStorage.setItem("points", $state.points.toString());
   };
 
-  let scale = false;
-  const animate = () => {
+  let scale: boolean = false;
+  const animate = (): void => {
     scale = true;
     setTimeout(() => {
       scale = false;
